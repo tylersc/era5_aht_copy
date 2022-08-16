@@ -1,0 +1,14 @@
+#PBS -l nodes=4:ppn=8
+#PBS -l walltime=02:00:00
+#PBS -m ae
+#PBS -M tylersc@atmos.washington.edu
+#PBS -N save_time_series
+#PBS -o save_time_series.out
+#PBS -e save_time_series.err
+
+cd $PBS_O_WORKDIR 
+
+conda activate era5
+
+python save_time_series.py
+
